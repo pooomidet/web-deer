@@ -17,95 +17,119 @@ export default function AboutExecutives() {
     standards: <StandardsPage />,
   };
 
+  const tabs = [
+    { id: "history", label: "ประวัติความเป็นมา", icon: History },
+    { id: "executives", label: "ผู้บริหาร", icon: Users },
+    { id: "vision", label: "วิสัยทัศน์", icon: Eye },
+    { id: "standards", label: "มาตรฐาน", icon: Award },
+  ];
+
   return (
-    // ปรับ py-12 สำหรับมือถือ และ md:py-20 สำหรับจอใหญ่
-    <section className="relative w-full min-h-screen py-12 md:py-20 overflow-hidden bg-slate-50 font-sans">
+    <section className="relative w-full min-h-screen py-16 md:py-24 overflow-hidden bg-slate-50 font-sans">
       
       {/* --- BACKGROUND DECORATION --- */}
-      <div className="absolute inset-0 w-full h-full pointer-events-none">
-        <div className="absolute h-full w-full bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:20px_20px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_70%,transparent_100%)]"></div>
+      {/* ลายจุด (Dot Pattern) จางๆ */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute h-full w-full bg-[radial-gradient(#cbd5e1_1px,transparent_1px)] [background-size:24px_24px] [mask-image:radial-gradient(ellipse_60%_60%_at_50%_50%,#000_70%,transparent_100%)] opacity-60"></div>
       </div>
-      <div className="absolute top-0 right-0 -translate-y-12 translate-x-12 w-64 h-64 md:w-96 md:h-96 bg-emerald-200/40 rounded-full blur-3xl opacity-50 mix-blend-multiply animate-pulse"></div>
-      <div className="absolute bottom-0 left-0 translate-y-12 -translate-x-12 w-64 h-64 md:w-96 md:h-96 bg-teal-200/40 rounded-full blur-3xl opacity-50 mix-blend-multiply animate-pulse delay-700"></div>
+      
+      {/* แสงฟุ้ง (Gradient Blobs) */}
+      <div className="absolute top-0 right-0 -translate-y-12 translate-x-12 w-64 h-64 md:w-[500px] md:h-[500px] bg-emerald-200/30 rounded-full blur-[80px] mix-blend-multiply animate-pulse"></div>
+      <div className="absolute bottom-0 left-0 translate-y-12 -translate-x-12 w-64 h-64 md:w-[500px] md:h-[500px] bg-teal-200/30 rounded-full blur-[80px] mix-blend-multiply animate-pulse delay-700"></div>
 
       {/* Main Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Section Header */}
-        <div id="AboutExecutives" className="text-center mb-8 md:mb-12">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 md:px-6 md:py-2 rounded-full bg-white/80 backdrop-blur-sm border border-emerald-100 text-emerald-700 text-sm md:text-lg font-bold mb-3 md:mb-4 shadow-sm ring-2 md:ring-4 ring-emerald-50">
-            <History className="w-4 h-4 md:w-5 md:h-5" />
+        {/* --- HEADER --- */}
+        <div id="AboutExecutives" className="text-center mb-10 md:mb-16">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/80 backdrop-blur-md border border-emerald-100 text-emerald-700 text-xs md:text-sm font-bold mb-5 shadow-sm ring-4 ring-emerald-50/50">
+            <History className="w-4 h-4" />
             <span>เกี่ยวกับ TANGJAI</span>
           </div>
           
-          {/* ปรับขนาดตัวอักษรตามหน้าจอ */}
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-800 tracking-tight leading-tight">
-            โครงสร้างองค์กรและความเป็นมา
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-800 tracking-tight leading-tight">
+            โครงสร้างองค์กร<span className="text-emerald-600">และความเป็นมา</span>
           </h2>
-          <div className="h-1.5 w-16 md:w-24 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-full mx-auto mt-3 md:mt-4"></div>
+          <p className="mt-4 text-slate-500 text-sm md:text-lg max-w-2xl mx-auto font-light">
+            รู้จักกับพวกเราให้มากขึ้น ผ่านเรื่องราว วิสัยทัศน์ และทีมบริหาร
+          </p>
         </div>
 
-        {/* Navigation Tabs - Responsive */}
-        <div className="flex justify-center mb-6 md:mb-10">
-          {/* เปลี่ยนจาก rounded-full เป็น rounded-2xl ในมือถือ เพื่อให้ดูดีเวลาปุ่มซ้อนกันหลายแถว */}
-          <div className="bg-white/50 backdrop-blur-md p-1.5 md:p-2 rounded-2xl md:rounded-full border border-slate-200 shadow-sm flex flex-wrap justify-center gap-2 w-full sm:w-auto">
-            {[
-              { id: "history", label: "ประวัติความเป็นมา", icon: History },
-              { id: "executives", label: "ผู้บริหาร", icon: Users },
-              { id: "vision", label: "วิสัยทัศน์", icon: Eye },
-              { id: "standards", label: "มาตรฐาน", icon: Award },
-            ].map((tab) => (
+        {/* --- TABS NAVIGATION --- */}
+        <div className="flex justify-center mb-8 md:mb-12">
+          {/* Container: Glassmorphism + Shadow */}
+          <div className="bg-white/60 backdrop-blur-xl p-2 rounded-2xl md:rounded-full border border-white/40 shadow-lg shadow-slate-200/50 flex flex-wrap justify-center gap-2 w-full max-w-md md:max-w-4xl">
+            {tabs.map((tab) => (
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                // Responsive Classes:
-                // text-xs -> text-sm -> text-base (ขนาดตัวหนังสือ)
-                // px-3 py-2 -> px-5 py-2.5 (ขนาดปุ่ม)
-                // flex-1 sm:flex-none (ในมือถือให้ปุ่มขยายเต็มพื้นที่แถว เพื่อกดง่าย)
                 className={`
-                  flex items-center justify-center gap-1.5 md:gap-2 
-                  px-3 py-2 sm:px-5 sm:py-2.5 
+                  relative flex items-center justify-center gap-2 
+                  px-4 py-2.5 sm:px-6 sm:py-3 
                   rounded-xl md:rounded-full 
-                  text-xs sm:text-sm md:text-base font-medium 
-                  transition-all duration-300 
-                  flex-1 sm:flex-none whitespace-nowrap
+                  text-sm md:text-base font-medium 
+                  transition-all duration-300 ease-out
+                  flex-1 sm:flex-none whitespace-nowrap select-none
                   ${
-                  activeTab === tab.id
-                    ? "bg-emerald-600 text-white shadow-md transform scale-100 sm:scale-105" // scale เฉพาะจอใหญ่ กัน layout ขยับในมือถือ
-                    : "text-slate-600 hover:bg-white hover:text-emerald-600 hover:shadow-sm"
-                }`}
+                    activeTab === tab.id
+                      ? "text-white shadow-md transform scale-[1.02]" // Active Styles
+                      : "text-slate-600 hover:text-emerald-700 hover:bg-white/80" // Inactive Styles
+                  }
+                `}
               >
-                <tab.icon className="w-3.5 h-3.5 md:w-5 md:h-5" />
-                {tab.label}
+                {/* Active Background Gradient */}
+                {activeTab === tab.id && (
+                  <div className="absolute inset-0 bg-gradient-to-r from-emerald-600 to-teal-500 rounded-xl md:rounded-full -z-10 animate-fadeScale"></div>
+                )}
+                
+                <tab.icon className={`w-4 h-4 md:w-5 md:h-5 ${activeTab === tab.id ? "text-white" : "opacity-70"}`} />
+                <span className="relative z-10">{tab.label}</span>
               </button>
             ))}
           </div>
         </div>
 
-        {/* Content Box */}
+        {/* --- CONTENT AREA --- */}
         <div className="max-w-5xl mx-auto">
-          {/* rounded-2xl ในมือถือ, rounded-3xl ในจอใหญ่ */}
-          <div className="bg-white rounded-2xl md:rounded-3xl shadow-xl shadow-slate-200/50 border border-slate-100 overflow-hidden relative min-h-[300px] md:min-h-[400px]">
+          <div className="bg-white rounded-3xl shadow-2xl shadow-slate-200/60 border border-slate-100 overflow-hidden relative min-h-[400px] transition-all duration-500">
              
-             {/* Decorative top bar */}
-             <div className="h-1.5 md:h-2 w-full bg-gradient-to-r from-emerald-500 via-teal-500 to-emerald-500"></div>
+             {/* Decorative Gradient Line */}
+             <div className="h-1.5 w-full bg-gradient-to-r from-emerald-400 via-teal-500 to-emerald-400 bg-[length:200%_100%] animate-gradientMove"></div>
              
-             {/* Padding: p-4 (มือถือ) -> p-8 (Tablet) -> p-12 (Desktop) */}
-             <div className="p-4 sm:p-8 md:p-12 animate-fadeIn">
-                {tabContent[activeTab]}
+             {/* Content with Fade Animation */}
+             <div className="p-5 sm:p-8 md:p-12">
+                {/* Key prop ensures React re-mounts and triggers animation when tab changes */}
+                <div key={activeTab} className="animate-fadeInUp">
+                   {tabContent[activeTab]}
+                </div>
              </div>
           </div>
         </div>
 
       </div>
 
+      {/* --- CUSTOM ANIMATIONS --- */}
       <style jsx>{`
-        @keyframes fadeIn {
-          from { opacity: 0; transform: translateY(10px); }
+        @keyframes fadeInUp {
+          from { opacity: 0; transform: translateY(15px); }
           to { opacity: 1; transform: translateY(0); }
         }
-        .animate-fadeIn {
-          animation: fadeIn 0.4s ease-out forwards;
+        @keyframes fadeScale {
+          from { opacity: 0; transform: scale(0.95); }
+          to { opacity: 1; transform: scale(1); }
+        }
+        @keyframes gradientMove {
+          0% { background-position: 0% 50%; }
+          100% { background-position: 100% 50%; }
+        }
+        .animate-fadeInUp {
+          animation: fadeInUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        .animate-fadeScale {
+          animation: fadeScale 0.3s ease-out forwards;
+        }
+        .animate-gradientMove {
+          animation: gradientMove 3s linear infinite;
         }
       `}</style>
     </section>
