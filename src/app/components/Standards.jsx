@@ -100,31 +100,31 @@ export default function Standards() {
       </div>
 
       {/* Modal - Lightbox */}
-      {selectedImage && (
-        <div
-          className="fixed inset-0 z-[999] flex items-center justify-center bg-slate-900/90 backdrop-blur-sm animate-fadeIn p-4"
-          onClick={() => setSelectedImage(null)}
-        >
-          <div className="relative max-w-5xl w-full h-full flex items-center justify-center animate-scaleIn">
-            
-            {/* Close Button */}
-            <button
-              className="absolute top-4 right-4 z-50 bg-white/10 hover:bg-white/20 text-white rounded-full p-2 transition-all"
-              onClick={() => setSelectedImage(null)}
-            >
-              <X size={24} />
-            </button>
+     {selectedImage && (
+  <div
+    className="fixed inset-0 z-[999] flex items-center justify-center bg-transparent animate-fadeIn p-4"
+    onClick={() => setSelectedImage(null)}
+  >
+    <div className="relative max-w-5xl w-full h-full flex items-center justify-center">
+      
+      {/* Close Button */}
+      <button
+        className="absolute top-4 right-4 z-50 bg-white/30 hover:bg-white/50 text-slate-900 rounded-full p-2 transition-all"
+        onClick={() => setSelectedImage(null)}
+      >
+        <X size={20} />
+      </button>
 
-            {/* Image Wrapper */}
-            <img
-              src={selectedImage}
-              alt="Full certificate"
-              className="max-w-full max-h-full object-contain rounded-lg shadow-2xl"
-              onClick={(e) => e.stopPropagation()} 
-            />
-          </div>
-        </div>
-      )}
+      {/* Image */}
+      <img
+        src={selectedImage}
+        alt="Full certificate"
+        className="max-w-full max-h-full object-contain rounded-lg animate-scaleIn"
+        onClick={(e) => e.stopPropagation()}
+      />
+    </div>
+  </div>
+)}
 
       <style jsx>{`
         @keyframes fadeIn {

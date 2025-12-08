@@ -50,9 +50,6 @@ export default function AboutExecutives() {
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-800 tracking-tight leading-tight">
             โครงสร้างองค์กร<span className="text-emerald-600">และความเป็นมา</span>
           </h2>
-          <p className="mt-4 text-slate-500 text-sm md:text-lg max-w-2xl mx-auto font-light">
-            รู้จักกับพวกเราให้มากขึ้น ผ่านเรื่องราว วิสัยทัศน์ และทีมบริหาร
-          </p>
         </div>
 
         {/* --- TABS NAVIGATION --- */}
