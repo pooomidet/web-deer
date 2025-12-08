@@ -113,36 +113,10 @@ export default function Services() {
                 <p className="text-slate-500 text-sm leading-relaxed mb-8 line-clamp-2 font-light">
                   {item.description}
                 </p>
-
-                {/* Bottom Action */}
-                <div className="mt-auto">
-                   <div className="flex items-center gap-2 text-xs font-semibold text-slate-400 mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-2 group-hover:translate-y-0">
-                      <CheckCircle2 size={12} className="text-emerald-500" />
-                      <span>มีสินค้าพร้อมส่ง</span>
-                   </div>
-
-                   <a
-                    href="#contact"
-                    className="flex items-center justify-between w-full p-4 rounded-xl bg-slate-50 text-slate-600 group-hover:bg-emerald-600 group-hover:text-white transition-all duration-300 border border-slate-100 group-hover:border-emerald-500 group-hover:shadow-lg group-hover:shadow-emerald-200"
-                  >
-                    <span className="text-sm font-semibold">ดูรายละเอียด</span>
-                    <div className="bg-white/20 p-1.5 rounded-full">
-                       <ArrowRight size={16} />
-                    </div>
-                  </a>
-                </div>
               </div>
 
             </div>
           ))}
-        </div>
-
-        {/* --- BOTTOM CTA --- */}
-        <div className="mt-20 text-center">
-            <p className="text-slate-400 text-sm mb-4">ยังหาสินค้าที่ต้องการไม่เจอ?</p>
-            <a href="#contact" className="inline-flex items-center gap-2 text-emerald-600 font-semibold hover:text-emerald-700 transition-colors border-b border-emerald-200 hover:border-emerald-600 pb-0.5">
-               ติดต่อสอบถามฝ่ายขายโดยตรง <ArrowRight size={16} />
-            </a>
         </div>
 
       </div>
