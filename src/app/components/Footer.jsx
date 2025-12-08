@@ -135,7 +135,8 @@ export default function Footer() {
         </div>
 
         {/* --- Bottom Bar --- */}
-        <div className="border-t border-slate-200 pt-8 mt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-400">
+       <div className="border-t border-slate-200 pt-8 mt-8 flex flex-col justify-center items-center gap-3 text-xs text-slate-400 text-center">
+
           <p>
             © {new Date().getFullYear()} TANGJAI Corporation Co., Ltd. All rights reserved.
           </p>
