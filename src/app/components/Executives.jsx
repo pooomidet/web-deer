@@ -55,10 +55,12 @@ export default function ExecutivesSection() {
 
       {previewImg && (
         <div
-          className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
+          // เปลี่ยน bg-black เป็น bg-white และผมลองปรับ opacity เป็น 90 ให้ดูสะอาดตาขึ้น
+          className="fixed inset-0 bg-white bg-opacity-90 flex items-center justify-center z-50"
           onClick={() => setPreviewImg(null)}
         >
-          <img src={previewImg} alt="Preview" className="max-h-[80%] max-w-[80%] rounded-xl shadow-xl" />
+          {/* เพิ่ม shadow-2xl ให้รูปดูลอยเด่นขึ้นมาจากพื้นขาว */}
+          <img src={previewImg} alt="Preview" className="max-h-[80%] max-w-[80%] rounded-xl shadow-2xl" />
         </div>
       )}
     </section>

@@ -54,35 +54,13 @@ export default function Hero() {
           พร้อมบริการหลังการขายที่เชื่อถือได้
         </p>
 
-        {/* Buttons */}
-        {/* มือถือ: ปุ่มเรียงแนวตั้งและกว้างเต็ม (w-full) / จอใหญ่: เรียงแนวนอน (w-auto) */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mb-10 sm:mb-16 w-full max-w-md sm:max-w-none mx-auto">
-          <a
-            href="#products"
-            className="w-full sm:w-auto px-6 py-3.5 sm:px-8 sm:py-4 rounded-full bg-emerald-600 hover:bg-emerald-500 
-            text-white font-semibold shadow-lg hover:shadow-emerald-500/30 
-            transition transform hover:-translate-y-1 text-sm sm:text-base tracking-wide text-center"
-          >
-            ดูสินค้าของเรา
-          </a>
-
-          <a
-            href="#contact"
-            className="w-full sm:w-auto px-6 py-3.5 sm:px-8 sm:py-4 rounded-full border-2 border-white/80 text-white 
-            font-semibold hover:bg-white hover:text-emerald-900 transition 
-            transform hover:-translate-y-1 text-sm sm:text-base tracking-wide text-center"
-          >
-            ขอใบเสนอราคา
-          </a>
-        </div>
-
         {/* Stats Boxes */}
         {/* Grid 1 แถวในมือถือ, 3 แถวในจอใหญ่ */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 max-w-sm sm:max-w-3xl mx-auto">
           {[
-            { label: "มาตรฐาน", value: "ISO 9001" },
-            { label: "ลูกค้าหลัก", value: "โรงเรียนรัฐบาล" },
-            { label: "บริการ", value: "ติดตั้งครบวงจร" }
+            { label: "มาตรฐาน", value: "ISO 9001",value2: "ISO 14001" },
+            { label: "ลูกค้าหลัก", value: "โรงเรียนรัฐบาล",value2: "" },
+            { label: "บริการ", value: "ติดตั้งครบวงจร",value2: "บริการจัดส่งถึงที่" },
           ].map((stat, index) => (
             <div 
               key={index}
@@ -94,6 +72,9 @@ export default function Hero() {
               </p>
               <p className="font-bold text-white text-base sm:text-lg">
                 {stat.value}
+              </p>
+              <p className="font-bold text-white text-base sm:text-lg">
+                {stat.value2}
               </p>
             </div>
           ))}

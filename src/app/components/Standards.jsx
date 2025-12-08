@@ -14,7 +14,7 @@ export default function Standards() {
 
   const data = [
     {
-      title: "ISO 24001",
+      title: "ISO 14001",
       subtitle: "มาตรฐานระบบบริหารคุณภาพ",
       desc: "การรับรองมาตรฐานระดับสากลด้านการจัดการ",
       image: "/img/1111.jpg",
