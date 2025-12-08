@@ -100,12 +100,12 @@ export default function Standards() {
       </div>
 
       {/* Modal - Lightbox */}
-     {selectedImage && (
+    {selectedImage && (
   <div
     className="fixed inset-0 z-[999] flex items-center justify-center bg-transparent animate-fadeIn p-4"
     onClick={() => setSelectedImage(null)}
   >
-    <div className="relative max-w-5xl w-full h-full flex items-center justify-center">
+    <div className="relative max-w-5xl w-full h-[90vh] md:h-full flex items-center justify-center">
       
       {/* Close Button */}
       <button
@@ -119,13 +119,12 @@ export default function Standards() {
       <img
         src={selectedImage}
         alt="Full certificate"
-        className="max-w-full max-h-full object-contain rounded-lg animate-scaleIn"
+        className="max-w-full max-h-[85vh] md:max-h-full object-contain rounded-lg animate-scaleIn"
         onClick={(e) => e.stopPropagation()}
       />
     </div>
   </div>
 )}
-
       <style jsx>{`
         @keyframes fadeIn {
           from { opacity: 0; }
